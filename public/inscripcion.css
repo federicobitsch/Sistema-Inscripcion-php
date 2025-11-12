@@ -1,0 +1,180 @@
+/*
+ * Inscripción CSS
+ * Estilos modernos y limpios
+ */
+
+/* ---------------------------------- */
+/* Estilos Generales y Tipografía */
+/* ---------------------------------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* Fondo suave */
+    color: #333;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h2 {
+    color: #0056b3;
+    border-bottom: 3px solid #0056b3;
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+/* ---------------------------------- */
+/* Navegación y Enlaces */
+/* ---------------------------------- */
+p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.2s;
+}
+
+p a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* ---------------------------------- */
+/* Contenedores de Mensajes (Alertas) */
+/* ---------------------------------- */
+.message-box {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Éxito (reemplaza el inline style background:#e6ffee) */
+div[style*="background:#e6ffee"] {
+    background: #d4edda !important;
+    border: 1px solid #c3e6cb !important;
+    color: #155724;
+}
+
+/* Error (reemplaza el inline style background:#ffe6e6) */
+div[style*="background:#ffe6e6"] {
+    background: #f8d7da !important;
+    border: 1px solid #f5c6cb !important;
+    color: #721c24;
+}
+
+div[style*="background:#ffe6e6"] ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+/* ---------------------------------- */
+/* Formulario Principal */
+/* ---------------------------------- */
+form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95em;
+}
+
+input[type="text"],
+input[type="file"] {
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.2);
+}
+
+/* ---------------------------------- */
+/* Botón de Guardar */
+/* ---------------------------------- */
+button[type="submit"] {
+    padding: 12px 25px;
+    background-color: #28a745; /* Verde para acción principal */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: background-color 0.3s ease, transform 0.1s;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+button[type="submit"]:active {
+    transform: scale(0.99);
+}
+
+/* ---------------------------------- */
+/* Estado Actual del Registro */
+/* ---------------------------------- */
+h3 {
+    color: #0056b3;
+    margin-top: 30px;
+    border-left: 4px solid #0056b3;
+    padding-left: 10px;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.status-info p {
+    background-color: #e9f5ff; /* Fondo para los detalles */
+    padding: 10px;
+    border-left: 3px solid #007bff;
+    margin: 8px 0;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+}
+
+.status-info p strong {
+    font-weight: 700;
+    color: #0056b3;
+}
+
+.status-info a {
+    color: #ff6f00; /* Naranja para el enlace de documento */
+    text-decoration: none;
+}
+
+.status-info a:hover {
+    text-decoration: underline;
+}
