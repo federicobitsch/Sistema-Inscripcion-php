@@ -14,7 +14,7 @@ if (isset($_POST['register'])) {
         'password' => $_POST['password']
     ];
     $user->create($data);
-    echo "✅ Usuario registrado. <a href='../../public/login.php'>Iniciar sesión</a>";
+    echo " Usuario registrado. <a href='../../public/login.php'>Iniciar sesión</a>";
 }
 
 if (isset($_POST['login'])) {

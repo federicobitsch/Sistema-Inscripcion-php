@@ -6,7 +6,7 @@ class Crud {
         $this->conn = $conn;
     }
 
-    // ✅ CREATE
+    // CREATE
     public function create(string $table, array $data) {
         $columns = implode(", ", array_keys($data));
         $placeholders = implode(", ", array_fill(0, count($data), "?"));
@@ -17,7 +17,7 @@ class Crud {
             throw new Exception("Error en la preparación del INSERT: " . $this->conn->error);
         }
 
-        $types = str_repeat("s", count($data)); // todos string por simplicidad
+        $types = str_repeat("s", count($data)); 
         $stmt->bind_param($types, ...array_values($data));
 
         if (!$stmt->execute()) {
@@ -27,7 +27,7 @@ class Crud {
         return $this->conn->insert_id;
     }
 
-    // ✅ READ ONE
+    // READ 
     public function readOne(string $query, array $params = []) {
         $stmt = $this->conn->prepare($query);
         if (!$stmt) throw new Exception("Error en SELECT: " . $this->conn->error);
@@ -42,7 +42,7 @@ class Crud {
         return $result->fetch_assoc();
     }
 
-    // ✅ READ ALL
+    // READ ALL
     public function readAll(string $query, array $params = []) {
         $stmt = $this->conn->prepare($query);
         if (!$stmt) throw new Exception("Error en SELECT: " . $this->conn->error);
@@ -57,7 +57,7 @@ class Crud {
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
-    // ✅ UPDATE
+    // UPDATE
     public function update(string $table, array $data, string $where, array $params = []) {
         $set = implode(", ", array_map(fn($col) => "$col = ?", array_keys($data)));
         $sql = "UPDATE $table SET $set WHERE $where";
@@ -72,7 +72,7 @@ class Crud {
         return $stmt->affected_rows >= 0;
     }
 
-    // ✅ DELETE
+    // DELETE
     public function delete(string $table, string $where, array $params = []) {
         $sql = "DELETE FROM $table WHERE $where";
         $stmt = $this->conn->prepare($sql);

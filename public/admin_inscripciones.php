@@ -14,7 +14,7 @@ $db = new Database();
 $conn = $db->connect();
 $crud = new Crud($conn);
 
-// Parámetros de paginación
+// Parametros de paginación
 $limit = 5;
 $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
 $offset = ($page - 1) * $limit;
@@ -24,7 +24,7 @@ $total = $crud->readOne("SELECT COUNT(*) as total FROM inscripcion")['total'] ??
 $totalPages = max(1, ceil($total / $limit));
 
 // Consulta de inscripciones
-// ⚠️ En este caso hacemos el LIMIT/OFFSET directo para evitar problemas con parámetros numéricos
+// hago el LIMIT/OFFSET directo para evitar problemas con parámetros numéricos
 $sql = "
     SELECT i.*, u.nombre 
     FROM inscripcion i 
@@ -38,7 +38,7 @@ $inscripciones = $crud->readAll($sql);
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<title>Panel del Administrador – Inscripciones</title>
+<title>Panel del Administrador Inscripciones</title>
 <style>
 body {
     font-family: Arial, sans-serif;

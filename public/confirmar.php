@@ -30,11 +30,11 @@ $msg = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $captchaInput = trim($_POST['captcha'] ?? '');
     if (!Captcha::verify($captchaInput)) {
-        $msg = "❌ Captcha incorrecto. Intente de nuevo.";
+        $msg = "Captcha incorrecto. Intente de nuevo.";
     } else {
         // Validar campos completos
         if (empty($registro['materia']) || empty($registro['documento'])) {
-            $msg = "❌ Faltan completar datos o adjuntar archivo.";
+            $msg = " Faltan completar datos o adjuntar archivo.";
         } else {
             // Confirmar inscripción
             $data = [
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'updated_at' => date('Y-m-d H:i:s')
             ];
             $model->actualizar($data, $userId);
-            $msg = "✅ Inscripción confirmada correctamente. 
+            $msg = " Inscripción confirmada correctamente. 
             <a href='descargar_comprobante.php'>Descargar comprobante PDF</a>";
         }
     }

@@ -8,19 +8,19 @@ class InscripcionController {
     private $upload;
 
     public function __construct($conn) {
-        $this->model = new Inscripcion($conn);   // ✅ nombre correcto
+        $this->model = new Inscripcion($conn);   // nombre correcto
         $this->upload = new UploadHandler();
     }
 
     public function getByUser($uid) {
-        return $this->model->obtenerPorUsuario($uid);  // ✅ coincide con Inscripcion.php
+        return $this->model->obtenerPorUsuario($uid);  // coincide con Inscripcion.php
     }
 
     public function saveDraft($uid, $data, $file) {
         $existing = $this->getByUser($uid);
         $filePath = null;
 
-        // ✅ usa guardar(), no handle()
+        
         if ($file && $file['error'] != UPLOAD_ERR_NO_FILE) {
             $filePath = $this->upload::guardar($file, $uid);
             $data['documento'] = $filePath;

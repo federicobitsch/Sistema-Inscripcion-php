@@ -19,7 +19,7 @@ class User {
         return $this->crud->readOne("SELECT * FROM usuario WHERE email = ?", [$email]);
     }
 
-    public function findById($id) {   // ✅ FUNCIONAL PARA PDF
+    public function findById($id) {   // FUNCIONAL PARA PDF
         return $this->crud->readOne("SELECT * FROM usuario WHERE id = ?", [$id]);
     }
 
